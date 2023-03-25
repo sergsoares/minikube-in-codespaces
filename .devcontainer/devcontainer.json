@@ -1,0 +1,23 @@
+{
+  "name": "Elixir",
+  "build":{
+    "dockerfile": "Dockerfile"
+  },
+    
+  "runArgs": ["--init", "--privileged"],
+	"mounts": [ "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind" ],
+	"overrideCommand": false,
+
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+
+  "appPort": [],
+  "postCreateCommand": "",
+  "remoteUser": "root",
+
+  "extensions": [
+    "editorconfig.editorconfig",
+    "redhat.vscode-yaml"
+  ]
+}
