@@ -1,1 +1,1 @@
-FROM ubuntu:22.04
+FROM elixir:1.13.0
