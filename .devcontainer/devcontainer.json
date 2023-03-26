@@ -5,7 +5,9 @@
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",  // Any generic, debian-based image.
   "remoteUser": "codespace",
   "features": {
+       "ghcr.io/devcontainers/features/docker-in-docker:2": {},
       "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {}
+
   },
 	  
   "overrideCommand": false,  
