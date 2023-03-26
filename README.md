@@ -1,6 +1,6 @@
 # Minimal Configuration to use K8S in Github CodeSpaces.
 
-This is the simplest way to get a simple k8s working with Codespaces, only using Microsoft pure images.
+This is the simplest way to get a simple k8s working with Codespaces, only using container images from Microsoft.
 
 After launch Codespaces can create a new cluster and start coding:
 ```
