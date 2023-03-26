@@ -1,18 +1,30 @@
 {
-  "name": "Elixir",
-  "dockerFile": "Dockerfile",
+  
+  "name": "minikube-app",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",  // Any generic, debian-based image.
+  "features": {
+      "ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {
+        "version": "1.1.4"
+      }
+  },
 
-    
+  "remoteUser": "codespace",
 
-  "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind" ],
+	"overrideCommand": false,
+
+	"mounts": ["source=codespaces-linux-var-lib-docker,target=/var/lib/docker,type=volume"],
 
   "settings": {
     "terminal.integrated.defaultProfile.linux": "bash"
   },
-
-  "appPort": [],
-  "postCreateCommand": "",
-  "remoteUser": "root",
+    
+  "runArgs": [
+		"--cap-add=SYS_PTRACE",
+		"--security-opt",
+		"seccomp=unconfined",
+		"--privileged",
+		"--init"
+	],
 
   "extensions": [
     "editorconfig.editorconfig",
